@@ -1,25 +1,38 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>MovieFlix</title>
 
   <link rel="stylesheet" href="style.css"/>
 
+  <!-- Font Awesome -->
+
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+
 </head>
 
 <body>
 
+  <!-- Background Glow -->
+
+  <div class="bg-glow glow1"></div>
+  <div class="bg-glow glow2"></div>
+
   <!-- Navbar -->
 
   <nav class="navbar">
-    <div class="logo">MovieFlix</div>
+
+    <div class="logo">
+      🎬 MovieFlix
+    </div>
 
     <ul class="nav-links">
       <li>Home</li>
@@ -28,7 +41,11 @@
       <li>Trending</li>
     </ul>
 
-    <button class="signin-btn">Sign In</button>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search movies..." />
+    </div>
+
   </nav>
 
   <!-- Hero Section -->
@@ -38,21 +55,34 @@
     <div class="overlay"></div>
 
     <div class="hero-content">
-      <h1>Unlimited Movies, TV Shows & More.</h1>
+
+      <span class="top-text">
+        #1 Trending Platform
+      </span>
+
+      <h1>
+        Unlimited Movies,
+        TV Shows & More.
+      </h1>
 
       <p>
-        Watch horror, romance, sci-fi, anime, action and more.
+        Watch horror, romance, sci-fi, anime,
+        thriller and action movies anytime.
       </p>
 
       <div class="hero-buttons">
+
         <button class="watch-btn">
-          <i class="fa-solid fa-play"></i> Watch Now
+          <i class="fa-solid fa-play"></i>
+          Watch Now
         </button>
 
         <button class="info-btn">
           More Info
         </button>
+
       </div>
+
     </div>
 
   </section>
@@ -61,33 +91,110 @@
 
   <section class="categories">
 
-    <h2>Popular Categories</h2>
+    <h2>Explore Categories 🍿</h2>
 
     <div class="card-container">
 
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop" />
-        <h3>Sci-Fi</h3>
-      </div>
+      <!-- Card -->
 
       <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop" />
-        <h3>Horror</h3>
+
+        <img
+          src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop"
+        />
+
+        <div class="movie-info">
+          <span>⭐ 8.9</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <h3>🚀 Sci-Fi</h3>
+
       </div>
 
-      <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1200&auto=format&fit=crop" />
-        <h3>Romance</h3>
-      </div>
+      <!-- Card -->
 
       <div class="movie-card">
-        <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=1200&auto=format&fit=crop" />
-        <h3>Adventure</h3>
+
+        <img
+          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop"
+        />
+
+        <div class="movie-info">
+          <span>⭐ 9.1</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <h3>👻 Horror</h3>
+
+      </div>
+
+      <!-- Card -->
+
+      <div class="movie-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1200&auto=format&fit=crop"
+        />
+
+        <div class="movie-info">
+          <span>⭐ 8.7</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <h3>❤️ Romance</h3>
+
+      </div>
+
+      <!-- Card -->
+
+      <div class="movie-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=1200&auto=format&fit=crop"
+        />
+
+        <div class="movie-info">
+          <span>⭐ 9.4</span>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <h3>⚔️ Action</h3>
+
       </div>
 
     </div>
 
   </section>
+
+  <!-- Premium Section -->
+
+  <section class="premium">
+
+    <h2>🍿 Upgrade To Premium</h2>
+
+    <p>
+      Watch unlimited movies in Ultra HD
+      without ads.
+    </p>
+
+    <button>
+      Upgrade Now
+    </button>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>
+      © 2026 MovieFlix. All Rights Reserved.
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
