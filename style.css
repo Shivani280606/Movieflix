@@ -8,86 +8,97 @@
 body{
   background:#050505;
   color:white;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   overflow-x:hidden;
 }
 
-/* Background Glow */
+/* Cursor Glow */
 
-.bg-glow{
-  position:fixed;
-  width:400px;
-  height:400px;
+.cursor-glow{
+  width:300px;
+  height:300px;
   border-radius:50%;
-  filter:blur(120px);
-  opacity:0.3;
-  z-index:-1;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,0,102,0.25),
+      transparent
+    );
+
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:9999;
 }
 
-.glow1{
-  background:#ff0066;
-  top:-100px;
-  left:-100px;
+/* Sidebar */
+
+.sidebar{
+  position:fixed;
+  width:240px;
+  height:100vh;
+  background:#0d0d0d;
+
+  padding:30px;
+
+  border-right:
+    1px solid rgba(255,255,255,0.08);
 }
 
-.glow2{
-  background:#0066ff;
-  bottom:-100px;
-  right:-100px;
+.logo{
+  font-size:32px;
+  color:#ff2e63;
+  font-weight:bold;
+  margin-bottom:50px;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar li{
+  padding:18px 0;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.sidebar li:hover{
+  color:#ff2e63;
+  transform:translateX(5px);
+}
+
+.sidebar i{
+  margin-right:12px;
+}
+
+/* Main */
+
+.main-content{
+  margin-left:240px;
 }
 
 /* Navbar */
 
 .navbar{
-  position:fixed;
-  width:100%;
-  top:0;
-  padding:20px 60px;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  background:rgba(255,255,255,0.05);
-
-  backdrop-filter:blur(10px);
-
-  border-bottom:1px solid rgba(255,255,255,0.1);
-
-  z-index:1000;
-}
-
-.logo{
-  font-size:32px;
-  font-weight:bold;
-  color:#ff2e63;
-}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  list-style:none;
-}
-
-.nav-links li{
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.nav-links li:hover{
-  color:#ff2e63;
+  padding:25px 50px;
 }
 
 .search-box{
   display:flex;
   align-items:center;
+
   gap:10px;
 
-  padding:12px 18px;
+  background:#111;
 
-  border-radius:30px;
+  padding:14px 20px;
 
-  background:rgba(255,255,255,0.08);
+  border-radius:40px;
 }
 
 .search-box input{
@@ -97,49 +108,65 @@ body{
   color:white;
 }
 
-.search-box i{
-  color:#ff2e63;
+.premium-btn{
+  background:
+    linear-gradient(
+      135deg,
+      #ff0066,
+      #6a00ff
+    );
+
+  border:none;
+
+  padding:14px 28px;
+
+  border-radius:40px;
+
+  color:white;
+
+  cursor:pointer;
+
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
 }
 
 /* Hero */
 
 .hero{
-  height:100vh;
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(0,0,0,0.9),
-      rgba(0,0,0,0.4)
-    ),
-
-    url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1600&auto=format&fit=crop');
-
-  background-size:cover;
-  background-position:center;
-
-  display:flex;
-  align-items:center;
+  padding:80px 60px;
 }
 
 .hero-content{
-  padding:0 80px;
   max-width:700px;
 }
 
 .top-text{
   color:#ff2e63;
-  font-weight:bold;
 }
 
 .hero h1{
   font-size:72px;
-  line-height:1.1;
   margin:20px 0;
+  line-height:1.1;
 }
 
 .hero p{
-  color:#ccc;
+  color:#bbb;
   font-size:20px;
   line-height:1.6;
 }
@@ -151,12 +178,11 @@ body{
 }
 
 .watch-btn,
-.info-btn{
-  padding:16px 34px;
+.trailer-btn{
+  padding:18px 35px;
   border:none;
   border-radius:40px;
   cursor:pointer;
-  font-size:16px;
   transition:0.3s;
 }
 
@@ -166,147 +192,155 @@ body{
 }
 
 .watch-btn:hover{
-  transform:scale(1.08);
   box-shadow:0 0 25px #ff2e63;
+  transform:scale(1.06);
 }
 
-.info-btn{
-  background:rgba(255,255,255,0.08);
-  color:white;
+/* Trending */
+
+.trending{
+  padding:50px 60px;
 }
 
-/* Categories */
-
-.categories{
-  padding:100px 60px;
-}
-
-.categories h2{
-  font-size:42px;
-  margin-bottom:50px;
-}
-
-.card-container{
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
+.slider{
+  display:flex;
   gap:30px;
+  overflow-x:auto;
+  margin-top:30px;
+}
+
+.slider::-webkit-scrollbar{
+  display:none;
 }
 
 .movie-card{
-  background:#111;
+  min-width:280px;
+
   border-radius:24px;
+
   overflow:hidden;
+
+  position:relative;
+
   transition:0.4s;
-  cursor:pointer;
+
+  transform-style:preserve-3d;
 }
 
 .movie-card:hover{
   transform:
-    translateY(-12px)
-    scale(1.03);
+    rotateY(10deg)
+    scale(1.05);
 
   box-shadow:
-    0 0 35px rgba(255,46,99,0.4);
+    0 0 30px rgba(255,0,102,0.5);
 }
 
 .movie-card img{
   width:100%;
-  height:320px;
+  height:380px;
   object-fit:cover;
 }
 
-.movie-info{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 20px;
-}
+.overlay-card{
+  position:absolute;
+  bottom:0;
 
-.movie-info i{
-  color:#ff2e63;
-}
+  width:100%;
 
-.movie-card h3{
-  padding:0 20px 20px;
-  font-size:24px;
-}
-
-/* Premium */
-
-.premium{
-  margin:60px;
-  padding:70px;
-
-  text-align:center;
-
-  border-radius:30px;
+  padding:20px;
 
   background:
     linear-gradient(
-      135deg,
-      #ff0066,
-      #6a00ff
+      transparent,
+      rgba(0,0,0,0.9)
     );
 }
 
-.premium h2{
-  font-size:52px;
-  margin-bottom:20px;
+/* Recommendation */
+
+.recommend{
+  padding:60px;
 }
 
-.premium p{
-  font-size:20px;
-  margin-bottom:30px;
+.recommend-box{
+  margin-top:20px;
+
+  background:#111;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  line-height:1.8;
 }
 
-.premium button{
-  padding:18px 40px;
+/* Modal */
+
+.modal{
+  position:fixed;
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.8);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  top:0;
+  left:0;
+}
+
+.modal-content{
+  width:80%;
+  max-width:900px;
+  position:relative;
+}
+
+.modal iframe{
+  width:100%;
+  height:500px;
   border:none;
-  border-radius:40px;
-  cursor:pointer;
-  font-size:18px;
 }
 
-/* Footer */
+.close-btn{
+  position:absolute;
+  top:-40px;
+  right:0;
 
-footer{
-  padding:40px;
-  text-align:center;
-  color:#888;
+  font-size:40px;
+  cursor:pointer;
 }
 
 /* Mobile */
 
 @media(max-width:768px){
 
-  .navbar{
-    padding:20px;
-  }
-
-  .nav-links{
+  .sidebar{
     display:none;
   }
 
-  .search-box{
-    display:none;
-  }
-
-  .hero-content{
-    padding:20px;
+  .main-content{
+    margin-left:0;
   }
 
   .hero h1{
     font-size:42px;
   }
 
-  .categories{
-    padding:80px 20px;
+  .navbar{
+    padding:20px;
   }
 
-  .premium{
-    margin:20px;
+  .hero{
     padding:40px 20px;
+  }
+
+  .trending,
+  .recommend{
+    padding:20px;
   }
 
 }
