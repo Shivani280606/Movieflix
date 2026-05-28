@@ -1,19 +1,59 @@
 ```javascript
-console.log("🎬 MovieFlix Loaded Successfully");
+console.log("🎬 MovieFlix PRO Loaded");
 
-/* Heart Toggle */
+/* Cursor Glow */
 
-const hearts = document.querySelectorAll(".fa-heart");
+const glow = document.querySelector(".cursor-glow");
 
-hearts.forEach((heart) => {
+document.addEventListener("mousemove", (e)=>{
 
-  heart.addEventListener("click", () => {
-
-    heart.classList.toggle("fa-solid");
-
-    heart.style.color = "#ff2e63";
-
-  });
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
 
 });
+
+/* Trailer Modal */
+
+const modal = document.querySelector(".modal");
+
+const trailerBtn =
+  document.querySelector(".trailer-btn");
+
+const closeBtn =
+  document.querySelector(".close-btn");
+
+trailerBtn.addEventListener("click", ()=>{
+
+  modal.style.display = "flex";
+
+});
+
+closeBtn.addEventListener("click", ()=>{
+
+  modal.style.display = "none";
+
+});
+
+/* Auto Slider */
+
+const slider = document.querySelector(".slider");
+
+let scrollAmount = 0;
+
+setInterval(()=>{
+
+  scrollAmount += 300;
+
+  if(
+    scrollAmount >= slider.scrollWidth
+  ){
+    scrollAmount = 0;
+  }
+
+  slider.scrollTo({
+    left:scrollAmount,
+    behavior:"smooth"
+  });
+
+},3000);
 ```
