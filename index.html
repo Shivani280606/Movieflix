@@ -3,10 +3,11 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>MovieFlix</title>
+  <title>MovieFlix Pro</title>
 
   <link rel="stylesheet" href="style.css"/>
 
@@ -21,178 +22,239 @@
 
 <body>
 
-  <!-- Background Glow -->
+  <!-- Cursor Glow -->
 
-  <div class="bg-glow glow1"></div>
-  <div class="bg-glow glow2"></div>
+  <div class="cursor-glow"></div>
 
-  <!-- Navbar -->
+  <!-- Animated Background -->
 
-  <nav class="navbar">
+  <div class="particles"></div>
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar">
 
     <div class="logo">
       🎬 MovieFlix
     </div>
 
-    <ul class="nav-links">
-      <li>Home</li>
-      <li>Movies</li>
-      <li>Series</li>
-      <li>Trending</li>
+    <ul>
+
+      <li>
+        <i class="fa-solid fa-house"></i>
+        Home
+      </li>
+
+      <li>
+        <i class="fa-solid fa-film"></i>
+        Movies
+      </li>
+
+      <li>
+        <i class="fa-solid fa-fire"></i>
+        Trending
+      </li>
+
+      <li>
+        <i class="fa-solid fa-heart"></i>
+        Favorites
+      </li>
+
+      <li>
+        <i class="fa-solid fa-user"></i>
+        Profile
+      </li>
+
     </ul>
 
-    <div class="search-box">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Search movies..." />
-    </div>
+  </aside>
 
-  </nav>
+  <!-- Main Content -->
 
-  <!-- Hero Section -->
+  <main class="main-content">
 
-  <section class="hero">
+    <!-- Navbar -->
 
-    <div class="overlay"></div>
+    <nav class="navbar">
 
-    <div class="hero-content">
+      <div class="search-box">
 
-      <span class="top-text">
-        #1 Trending Platform
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          placeholder="Search movies..."
+        />
+
+      </div>
+
+      <button class="premium-btn">
+        Upgrade Premium
+      </button>
+
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="top-text">
+          #1 Trending Platform
+        </span>
+
+        <h1>
+          Unlimited Movies,
+          TV Shows & More.
+        </h1>
+
+        <p>
+          Watch horror, romance, anime,
+          action and sci-fi movies instantly.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="watch-btn">
+            <i class="fa-solid fa-play"></i>
+            Watch Now
+          </button>
+
+          <button class="trailer-btn">
+            Watch Trailer
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Trending -->
+
+    <section class="trending">
+
+      <h2>🔥 Trending Now</h2>
+
+      <div class="slider">
+
+        <!-- Card -->
+
+        <div class="movie-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop"
+          />
+
+          <div class="overlay-card">
+
+            <h3>🚀 Sci-Fi</h3>
+
+            <span>⭐ 8.9</span>
+
+          </div>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="movie-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop"
+          />
+
+          <div class="overlay-card">
+
+            <h3>👻 Horror</h3>
+
+            <span>⭐ 9.1</span>
+
+          </div>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="movie-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1200&auto=format&fit=crop"
+          />
+
+          <div class="overlay-card">
+
+            <h3>❤️ Romance</h3>
+
+            <span>⭐ 8.7</span>
+
+          </div>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="movie-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=1200&auto=format&fit=crop"
+          />
+
+          <div class="overlay-card">
+
+            <h3>⚔️ Action</h3>
+
+            <span>⭐ 9.4</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- AI Recommendation -->
+
+    <section class="recommend">
+
+      <h2>🧠 AI Recommendations</h2>
+
+      <div class="recommend-box">
+
+        Based on your interest in
+        Sci-Fi and Thriller movies,
+        we recommend:
+        <strong>Interstellar</strong>,
+        <strong>Inception</strong>,
+        and
+        <strong>Dune</strong>.
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Trailer Modal -->
+
+  <div class="modal">
+
+    <div class="modal-content">
+
+      <span class="close-btn">
+        &times;
       </span>
 
-      <h1>
-        Unlimited Movies,
-        TV Shows & More.
-      </h1>
-
-      <p>
-        Watch horror, romance, sci-fi, anime,
-        thriller and action movies anytime.
-      </p>
-
-      <div class="hero-buttons">
-
-        <button class="watch-btn">
-          <i class="fa-solid fa-play"></i>
-          Watch Now
-        </button>
-
-        <button class="info-btn">
-          More Info
-        </button>
-
-      </div>
+      <iframe
+        src="https://www.youtube.com/embed/YoHD9XEInc0"
+        allowfullscreen>
+      </iframe>
 
     </div>
 
-  </section>
-
-  <!-- Categories -->
-
-  <section class="categories">
-
-    <h2>Explore Categories 🍿</h2>
-
-    <div class="card-container">
-
-      <!-- Card -->
-
-      <div class="movie-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop"
-        />
-
-        <div class="movie-info">
-          <span>⭐ 8.9</span>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-
-        <h3>🚀 Sci-Fi</h3>
-
-      </div>
-
-      <!-- Card -->
-
-      <div class="movie-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop"
-        />
-
-        <div class="movie-info">
-          <span>⭐ 9.1</span>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-
-        <h3>👻 Horror</h3>
-
-      </div>
-
-      <!-- Card -->
-
-      <div class="movie-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1200&auto=format&fit=crop"
-        />
-
-        <div class="movie-info">
-          <span>⭐ 8.7</span>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-
-        <h3>❤️ Romance</h3>
-
-      </div>
-
-      <!-- Card -->
-
-      <div class="movie-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=1200&auto=format&fit=crop"
-        />
-
-        <div class="movie-info">
-          <span>⭐ 9.4</span>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-
-        <h3>⚔️ Action</h3>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Premium Section -->
-
-  <section class="premium">
-
-    <h2>🍿 Upgrade To Premium</h2>
-
-    <p>
-      Watch unlimited movies in Ultra HD
-      without ads.
-    </p>
-
-    <button>
-      Upgrade Now
-    </button>
-
-  </section>
-
-  <!-- Footer -->
-
-  <footer>
-
-    <p>
-      © 2026 MovieFlix. All Rights Reserved.
-    </p>
-
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 
